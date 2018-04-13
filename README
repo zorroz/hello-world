@@ -1,0 +1,29 @@
+* Create a git repo from scratch
+1. create the local repo dir
+2. git init
+3. add files
+4. git add <>  # add to staging area
+5. git commit -m "Add xxx story"  #
+6. git remote add origin https://github.com/try-git/try_git.git
+7. git push -u origin master # origin is remote repo, master is local branch name
+
+* Check diff and revert
+1. git pull origin master
+2. git diff HEAD
+3. git diff --stage
+4. git reset <file>  # remove file from stage
+5. git checkout -- <file> # revert back <file>
+
+* Pull and merge changes
+1. git branch <name>   # create local branch only
+2. git rm <> # remove from stage and os
+3. git commit -m ""
+4. git checkout master
+5. git merge clean_up  # no confliction prompt???  local merge??
+6. git branch -d clean_up  # local brach delete??
+7. git push
+
+
+git clone <git repo>
+git checkout <branch>
+git checkout -b <new_branch>
