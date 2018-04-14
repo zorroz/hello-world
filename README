@@ -31,7 +31,7 @@
 git clone <git repo>
 git checkout <branch>  # existing branch
 git checkout -b <new_branch>  # create a new branch
-
+test merge
 
 
 1. working directory, staging area, .git directory(local repo), remote
