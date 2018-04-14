@@ -23,7 +23,59 @@
 6. git branch -d clean_up  # local brach delete??
 7. git push
 
+* Solve confliction while merge
+1. line confliction
+2. file delete confliction
+
 
 git clone <git repo>
-git checkout <branch>
-git checkout -b <new_branch>
+git checkout <branch>  # existing branch
+git checkout -b <new_branch>  # create a new branch
+
+
+
+1. working directory, staging area, .git directory(local repo), remote
+    - working directory?
+    - staging area?
+    - .git directory?
+    - remote: 
+
+2. checkout, add, commit
+    - checkout: 
+    - add: 
+    - commit: commit to local repo
+3. push: to remote repo?
+    - .git local repo -> remote repo
+4. merge, pull and pull request?
+    - pull: remote repo -> local repo, merge
+5. snapshot?
+
+6. HEAD?
+
+7. modify file, add, modify file again, checkout file, what happen?
+
+8. Master, Branch
+    - Master: develop in 2test
+        - create:
+        - 
+    - Branch:
+        - create:
+        - switch:
+        - modify:
+        - merge:
+        - reset:
+        - delete:
+
+9. clone & fork
+    - clone: remote repo -> local repo
+    - fork: remote repo1 -> remote repo2
+
+
+Task/Workflow:
+1. Create a new branch and modify it and merge it
+
+2. Create a new branch and modify it and reset changes
+
+3. Create a new repo, create files and submit
+    1. mkdir(working dir) -> git init(.git local repo) -> create/modify files -> git add (staging) -> git commit (.git local repo) -> git push (remote repo)
+    2. git pull(remote -> local repo) -> git checkout(local repo -> working dir)
