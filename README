@@ -27,3 +27,5 @@
 git clone <git repo>
 git checkout <branch>
 git checkout -b <new_branch>
+
+test merge
