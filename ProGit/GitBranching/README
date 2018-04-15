@@ -1,0 +1,11 @@
+When commit, Git stores a COMMIT OBJECT that contains a pointer to the snapshot of the content you staged. This object also contains the author's name and email, the message that you typed, and pointers to the commit or commits that directly came before this commit(its parent or parents): zero parents for the initial commit, one parent for a normal commit, and multiple parents for a commit that results from a merge of two or more branches.
+
+COMMIT OBJECT: commit, parent, author, committer, tree -> blobs(binary large objects)
+SNAPSHOT = tree + blobs
+
+COMMIT1 <- COMMIT2 <- COMMIT3 <-master <-HEAD
+
+A branch in Git is simply a lightweight movable pointer to one of these commits. The default branch in Git is master. When you create a new branch, it will add a new pointer to the same commit you're currently on. 
+
+HEAD: a pointer to the local branch you're currently on.
+git checkout <branch> => set HEAD to new branch

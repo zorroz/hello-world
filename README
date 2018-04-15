@@ -36,6 +36,8 @@ test merge
 
 1. working directory, staging area, .git directory(local repo), remote
     - working directory: single checkout of one version of the project. pulled out of the compressed db in .git dir and placed on disk for you to use or modify.
+        + only one working dir for all branches?
+        
     - staging area: A FILE("index") in .git dir, stores information about what will go into your next commit. 
     - .git directory: stores all meta data and object database for your project, what you copied when clone
         + all version of project?

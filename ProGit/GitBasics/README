@@ -11,20 +11,94 @@ Getting a Git Repo:
 1. under local dir 'git init'
 2. clone an existing repo: git clone <url>
     git clone https://github.com/zorroz/hello-world.git
-    # 1. copy all information(meta & obj file) from remote
+    # 1. copy all information(meta & obj file) from remote (which branch?)
       2. checkout a copy of files(working copy) to working dir
-         - when clone, which branch will be cloned?
+         - when copy, which branch will be cloned?
       3. set all working copy files as 'tracked/unmodified'
          
 Recording changes to Repo(local .git dir)    
 1. file status:
-    - tracked: files were in the last snapshot. can be unmodified, modified or staged.
+    - tracked: files were in the last snapshot or added into staging area. can be unmodified, modified or staged.
     - untracked: files were not in your last snapshot and not in staging area.
 2. stage/unstage file:
     git add <file> # add file CONTENT CHANGE to .git/index
     git reset HEAD <file> # remove file CONTENT CHANGE from .git/index
 
 3. git diff:
-    - git diff: show change between staged and unstaged
+    - git diff: show change between staged and unstaged, if you staged all changes, git diff will show nothing
     - git diff --staged: show change between last commited and current staged
+    - git diff --cached: same as --staged
+
+4. git commit: add staged CHANGES snapshot to .git local repo 
+    - git commit -m 'commit message'
+    - git commit -a -m 'commit with add'
+    
+5. git rm: remove file from tracked files(from staging area) and also DELETE it from working dir!
+    - git rm 
+    - git -f rm <file>: remove staged file from dir
+    - git rm --cached <file>: remove from stage
+    
+6. git mv: move file
+    - git mv fileA fileB: rename file = 
+      mv fileA fileB; git rm fileA; git add fileB
+
+7. git log: commit logs of .git local repo?
+    - git log -p -2
+    - git log --stat
+    - git log --pretty=oneline
+    - git log --pretty=format:"%h %s" --graph
+    
+Undoing Things:
+anything commited can almost always be recovered.
+anything not committed is likely never to be recovered.
+
+1. git commit --amend
+    - amend last commit with new commit, to include new changes or modify commit message, etc.
+        + can commit amend after push? no??
+
+2. git reset HEAD <file>
+    - git reset HEAD <file>: move file out of stage, no touch of file in working dir.
+    git checkout -- <file>: discard changes in working directory. DANGEROUS COMMAND. Any change you made to the file are gone - Git copied another file over it. 
+        + from where? .git repo?
+        + how if want to keep the change but still need to get it out of the way for now? - Git branch
+
+Working with Remotes
+Push and pull data from remote to share work.
+Add remote repos, remove remotes, manage various remote branches and define them as being tracked or not.
+
+1. Show remotes
+    - git remote -v
+
+2. Add remote
+    - git clone implicitly added 'origin' remote
+    - git remote add <shortname> <url>
+        git remote add pb https://github.com/paulboone/ticgit
+        git fetch pb # -> pb/master pb/ticgit
+
+3. Fetching and Pulling from Remote
+    - git fetch <remote> # pull down all data from remote you don't have yet. After you do this, you should have reference to all the branches from remote, which you can merge in or inspect at any time.
+        + no merge, only downloads data to .git local repo
+    - git pull: fetch & merge into current branch
+        + if clone, git pull will automatically pull from remote master branch and merge it into current code
+        + have to commit before pull??
+
+4. Pushing to Remote
+    - git push <remote> <branch>
+        # only work if nobody has pushed, or the push will be rejected. Have to fetch, then merge, then push.
+
+5. Inspecting a Remote
+    - git remote show origin
+
+6. Renaming and Removing Remotes
+    - git remote rename origin org
+    - git remote rm origin
+    
+Git Aliases
+1. git config --global alias.co checkout
+   git config --global alias.br branch
+   git config --global alias.ci commit
+   git config --global alias.st status
+   git config --global alias.unstage 'reset HEAD --'
+   git config --global alias.last 'log -1 HEAD'
+        
     
