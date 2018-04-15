@@ -35,19 +35,28 @@ test merge
 
 
 1. working directory, staging area, .git directory(local repo), remote
-    - working directory?
-    - staging area?
-    - .git directory?
+    - working directory: single checkout of one version of the project. pulled out of the compressed db in .git dir and placed on disk for you to use or modify.
+        + only one working dir for all branches?
+        
+    - staging area: A FILE("index") in .git dir, stores information about what will go into your next commit. 
+    - .git directory: stores all meta data and object database for your project, what you copied when clone
+        + all version of project?
+        +
     - remote: 
 
 2. checkout, add, commit
-    - checkout: 
-    - add: 
+    - checkout: checkout file from local .git repo from last commited content
+    - add: add precisely this CHANGE CONTENT to the next commit
+        + untracked -> tracked/new/staged
+        + modified/tracked/unstaged -> modified/tracked/staged
+        + mark merge-conflicted files as resolved
     - commit: commit to local repo
 3. push: to remote repo?
     - .git local repo -> remote repo
 4. merge, pull and pull request?
-    - pull: remote repo -> local repo, merge
+    - pull: remote repo -> local repo, merge if confliction
+        + same branch or can be different branch?
+    - pull request: request to merge to base branch, need to review and approve
 5. snapshot?
 
 6. HEAD? The pointer to which branch your currently on.
@@ -60,7 +69,8 @@ test merge
         - 
     - Branch:
         - create:
-        - switch:
+        - switch: 
+            + checkout branch before commit current branch?
         - modify:
         - merge:
         - reset:
