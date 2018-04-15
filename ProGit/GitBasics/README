@@ -1,0 +1,30 @@
+1. Configure and initialize a repo
+2. Begin and stop tracking files
+3. Stage and commit changes
+4. Ignore certain files
+5. Undo mistakes
+6. Browse history of project
+7. View changes between commits
+8. Push and pull from remote repo
+
+Getting a Git Repo:
+1. under local dir 'git init'
+2. clone an existing repo: git clone <url>
+    git clone https://github.com/zorroz/hello-world.git
+    # 1. copy all information(meta & obj file) from remote
+      2. checkout a copy of files(working copy) to working dir
+         - when clone, which branch will be cloned?
+      3. set all working copy files as 'tracked/unmodified'
+         
+Recording changes to Repo(local .git dir)    
+1. file status:
+    - tracked: files were in the last snapshot. can be unmodified, modified or staged.
+    - untracked: files were not in your last snapshot and not in staging area.
+2. stage/unstage file:
+    git add <file> # add file CONTENT CHANGE to .git/index
+    git reset HEAD <file> # remove file CONTENT CHANGE from .git/index
+
+3. git diff:
+    - git diff: show change between staged and unstaged
+    - git diff --staged: show change between last commited and current staged
+    
