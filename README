@@ -50,7 +50,7 @@ test merge
     - pull: remote repo -> local repo, merge
 5. snapshot?
 
-6. HEAD?
+6. HEAD? The pointer to which branch your currently on.
 
 7. modify file, add, modify file again, checkout file, what happen?
 
