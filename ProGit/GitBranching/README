@@ -9,3 +9,6 @@ A branch in Git is simply a lightweight movable pointer to one of these commits.
 
 HEAD: a pointer to the local branch you're currently on.
 git checkout <branch> => set HEAD to new branch
+
+If you create a new branch before you commit all changes, and you switch to the new branch, all the changes you made after last commit will bring to new branch. You have to commit all changes before you switch back to old branch or changes will be LOST!!!
+
