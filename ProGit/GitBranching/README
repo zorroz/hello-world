@@ -18,3 +18,29 @@ git checkout -b <branch> = git branch <branch>; git checkout <branch>
 On master, 'git merge testing' merge testing to master, then 'git branch -d testing' to delete testing branch.
 
 conflict resolve: vi conflicted_file, remove all <<<<<HEAD, =====, >>>>>, then run git add conflicted_file to mark it as resolved
+
+Brach management:
+1. git branch <file> #create branch; .git local repo
+2. git checkout <branch> # switch to branch; .git local repo
+3. git checkout -b <branch> # create and switch to branch; .git
+4. git branch # view branches; .git local repo
+5. git branch -v
+6. git branch -d <branch> # delete branch; .git local repo
+7. git merge <branch> # merge branch; .git local repo
+
+
+Branching Workflows:
+1. Long-running Branches
+    master + develop + feature
+
+2. Topic branches
+
+Remote-tracking Branches: references to the state of remote branches, like bookmark to remind you where the branches in your remote repos were the last time your connected to them
+origin/iss53
+
+origin: git clone automatically names remote as origin by default
+master: git init create a default 'master' branch
+
+git clone: origin/master = master = same commit
+
+To synchronize your work, you run a git fetch origin command. This command looks up which server “origin” is (in this case, it’s git.ourcompany.com), fetches any data from it that you don’t yet have, and updates your local database, moving your origin/master pointer to its new, more up-todate position.
